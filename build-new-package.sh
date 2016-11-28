@@ -12,8 +12,8 @@ JVB_VER=`cat jitsi-videobridge`
 JICOFO_VER=`cat jicofo`
 JITSI_MEET_WEB_VER=`cat jitsi-meet-web`
 sed -i.bak  -e "s/__JVB_VER__/$JVB_VER-1/" debian/control
-sed -i.bak  -e "s/__JICOFO_VER__/$JICOFO_VER-1/" debian/control
-sed -i.bak  -e "s/__JITSI_MEET_WEB_VER__/$JITSI_MEET_WEB_VER-1/" debian/control
+sed -i.bak  -e "s/__JICOFO_VER__/1.0-$JICOFO_VER-1/" debian/control
+sed -i.bak  -e "s/__JITSI_MEET_WEB_VER__/1.0.$JITSI_MEET_WEB_VER-1/" debian/control
 
 export DEBFULLNAME="Jitsi Team"
 export DEBEMAIL="dev@jitsi.org"
