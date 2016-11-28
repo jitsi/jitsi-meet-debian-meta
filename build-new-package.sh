@@ -17,7 +17,7 @@ sed -i.bak  -e "s/__JITSI_MEET_WEB_VER__/$JITSI_MEET_WEB_VER-1/" debian/control
 
 export DEBFULLNAME="Jitsi Team"
 export DEBEMAIL="dev@jitsi.org"
-dch -v "$NEW_JITSI_MEET_VER-1" "Build using jitsi-videobridge: $JVB_VER, jicofo: $JICOFO_VER, jitsi-meet-web: $JITSI_MEET_WEB_VER"
+dch -v "1.0.$NEW_JITSI_MEET_VER-1" "Build using jitsi-videobridge: $JVB_VER, jicofo: $JICOFO_VER, jitsi-meet-web: $JITSI_MEET_WEB_VER"
 dch -D unstable -r ""
 
 dpkg-buildpackage -A -rfakeroot -us -uc
