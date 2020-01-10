@@ -14,6 +14,7 @@ Depends: jitsi-videobridge (= __JVB_VER__),
  jitsi-meet-web (= __JITSI_MEET_WEB_VER__),
  jitsi-meet-web-config (= __JITSI_MEET_WEB_VER__),
  jitsi-meet-prosody (= __JITSI_MEET_WEB_VER__)
+Recommends: jitsi-meet-turnserver (= __JITSI_MEET_WEB_VER__)
 Description: WebRTC JavaScript video conferences
  Jitsi Meet is a WebRTC JavaScript application that uses Jitsi
  Videobridge to provide high quality, scalable video conferences.
