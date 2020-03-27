@@ -17,7 +17,7 @@
 
 DEPENDENCIES=`apt-cache show jitsi-meet=$1 | grep '^Depends:' | cut -f2- -d:`
 
-REGEXP="([[:alpha:]-]*) \(= (.*)\)"
+REGEXP="([[:alnum:]-]*) \(= (.*)\)"
 getAPTParams () {
 	RET=""
 	IFS=',' read -ra ADDR <<< "$1"
@@ -28,24 +28,19 @@ getAPTParams () {
 				VAR_NAME=`echo ${BASH_REMATCH[1]} | tr - _`
 				eval "$VAR_NAME=${BASH_REMATCH[2]}"
 			fi
-		done   
-} 
+		done
+}
 
 APT_COMMAND="apt-get install "
 getAPTParams "$DEPENDENCIES"
 APT_COMMAND="$APT_COMMAND $RET"
 
-# lests add minor versions that normally increments
-jitsi_videobridge_min=${jitsi_videobridge%-1}
+jitsi_videobridge_min=${jitsi_videobridge2%-1}
 
 jicofo_min=${jicofo%-1}
-jicofo_min=${jicofo_min#1.0-}
 
 jitsi_meet_web_min=${jitsi_meet_web%-1}
-jitsi_meet_web_min=${jitsi_meet_web_min#1.0.}
 
 jitsi_meet_web_config_min=${jitsi_meet_web_config%-1}
-jitsi_meet_web_config_min=${jitsi_meet_web_config_min#1.0.}
 
 jitsi_meet_prosody_min=${jitsi_meet_prosody%-1}
-jitsi_meet_prosody_min=${jitsi_meet_prosody_min#1.0.}
