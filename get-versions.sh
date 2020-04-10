@@ -16,6 +16,7 @@
 #
 
 DEPENDENCIES=`apt-cache show jitsi-meet=$1 | grep '^Depends:' | cut -f2- -d:`
+PRE_DEPENDENCIES=`apt-cache show jitsi-meet=$1 | grep '^Pre-Depends:' | cut -f2- -d:`
 
 REGEXP="([[:alnum:]-]*) \(= (.*)\)"
 getAPTParams () {
@@ -33,6 +34,7 @@ getAPTParams () {
 
 APT_COMMAND="apt-get install "
 getAPTParams "$DEPENDENCIES"
+getAPTParams "$PRE_DEPENDENCIES"
 APT_COMMAND="$APT_COMMAND $RET"
 
 jitsi_videobridge_min=${jitsi_videobridge2%-1}
