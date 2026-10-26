@@ -1,0 +1,30 @@
+# mini-dinstall config for the download.jitsi.org archive.
+# Replace __REPO_TOOLS_DIR__ with the absolute path of this directory.
+[DEFAULT]
+architectures = all, amd64
+archive_style = flat
+use_dnotify = 0
+verify_sigs = 0
+mail_on_success = 0
+poll_time = 10
+mail_log_level = NONE
+incoming_permissions = 0
+keep_old = 1
+generate_release = 1
+release_origin = jitsi.org
+release_label = Jitsi Debian packages repository
+release_description = Jitsi Debian packages repository
+release_signscript = __REPO_TOOLS_DIR__/sign-release.sh
+max_retry_time = 172800
+
+[stable]
+release_description = Jitsi stable packages
+
+[testing]
+release_description = Jitsi testing packages
+
+[unstable]
+release_description = Jitsi unstable packages
+
+[alpha]
+release_description = Jitsi alpha testing packages
